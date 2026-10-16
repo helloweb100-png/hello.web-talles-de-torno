@@ -132,6 +132,7 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 .section { position: relative; z-index: var(--z-main); padding-block: var(--pad); overflow-x: clip; }   /* los anillos giratorios ocupan su caja diagonal */
 .section__head { max-width: 920px; margin-bottom: clamp(36px, 6vw, 72px); }
 .section__head--center { margin-inline: auto; text-align: center; }
+.section__head--center .lead { margin-inline: auto; }
 
 /* Palabras divididas por JS (revelado enmascarado) */
 .w { display: inline-block; overflow: hidden; vertical-align: top; padding: .04em 0 .16em; margin: -.04em 0 -.16em; }
@@ -441,6 +442,12 @@ html.is-loading, html.is-loading body { overflow: hidden; }
 .hero__sub {
     max-width: 36ch; margin-top: 24px;
     color: var(--ink-2); font-size: clamp(1.05rem, 2.6vw, 1.22rem); line-height: 1.55;
+}
+/* Móvil: el texto de bienvenida es largo; sube el dado y compacta el párrafo para no tapar el título */
+@media (max-width: 899px) {
+    .hero { --sy: 19%; }
+    .hero__sub { margin-top: 18px; font-size: .96rem; line-height: 1.5; }
+    .hero__kicker { margin-bottom: 14px; }
 }
 .hero__cta { display: flex; flex-direction: column; gap: 12px; margin-top: 30px; }
 @media (min-width: 560px) { .hero__cta { flex-direction: row; } }
